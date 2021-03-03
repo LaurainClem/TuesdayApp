@@ -1,0 +1,23 @@
+nz-avatar {
+  background-color: #1890ff;
+}
+
+.userInfo {
+  font-size: 1rem;
+  span {
+    margin-left: 0.6rem;
+  }
+}
+
+nz-layout {
+  height: 100vh;
+  nz-sider {
+    background: #292f4c;
+    .userInfos {
+      position: absolute;
+      bottom: 3vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

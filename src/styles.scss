@@ -1,1 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  color: #3c3e42;
+  background: #ffffff;
+}
+
+.ant-layout-header,
+.ant-layout-content {
+  background: #ffffff;
+  color: #3c3e42;
+  padding: 0 50px;
+}
+
+.ant-layout {
+  background: #ffffff;
+}
+
+nz-header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 10vh;
+  margin-bottom: 3rem;
+}
+
+nz-sider {
+  margin-right: 5rem;
+}
+
+.card {
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  background: #ffff;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  height: 200px;
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.ant-progress-inner {
+  background: #c5c7d0;
+}
+
+.segmentTable {
+  background: #f5f6f8;
+  margin: 0 0.2rem 0 0;
+  font-size: 1rem;
+  justify-content: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.firstSegment {
+  border-left: #4c94fc 0.2rem solid;
+  padding-left: 1rem;
+  justify-content: left !important;
+}
+
+.orangeSegment {
+  background: orange;
+  color: white;
+}
+
+.greenSegment {
+  background: #4c94fc;
+  color: white;
+}
+
+.headerSegment {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
