@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { ProjectModel } from '../models/project.model';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class ProjectsService {
   constructor(private readonly http: HttpClient) {}
 
   public FindAll(): Observable<ProjectModel[]> {
-    const projects: ProjectModel[] = [
+    /* const projects: ProjectModel[] = [
       {
         Id: 1,
         Label: 'Esimed',
@@ -27,7 +28,7 @@ export class ProjectsService {
         RealStartDate: new Date(),
         Status: 'done',
       },
-    ];
-    return of(projects);
+    ]; */
+    return this.http.get<ProjectModel[]>(`${environment.baseUrl}/projects`);
   }
 }

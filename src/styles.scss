@@ -65,12 +65,12 @@ nz-sider {
 }
 
 .orangeSegment {
-  background: orange;
+  background: #ffa71b;
   color: white;
 }
 
 .greenSegment {
-  background: #4c94fc;
+  background: #2ecc71;
   color: white;
 }
 
@@ -78,4 +78,8 @@ nz-sider {
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
+}
+
+.c-hover:hover {
+  cursor: pointer;
 }

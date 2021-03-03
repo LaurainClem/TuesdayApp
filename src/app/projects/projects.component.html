@@ -3,7 +3,7 @@
   <div nz-row>
     <nz-col nzSpan="24">
       <div nz-row>
-        <div class="headerSegment" nz-col nzSpan="8">Nom</div>
+        <div class="headerSegment" nz-col nzSpan="6">Nom</div>
         <div class="headerSegment" nz-col nzSpan="2">Admin</div>
         <div class="headerSegment" nz-col nzSpan="4">Status</div>
         <div class="headerSegment" nz-col nzSpan="6">Progression</div>
@@ -12,17 +12,17 @@
 
     <div nz-col nzSpan="24" *ngFor="let project of projects" class="projectRow">
       <div nz-row>
-        <div class="segmentTable firstSegment" nz-col nzSpan="8">
+        <div class="segmentTable c-hover firstSegment" nz-col nzSpan="6">
           {{ project.Label }}
         </div>
-        <div class="segmentTable" nz-col nzSpan="2">
+        <div class="segmentTable c-hover" nz-col nzSpan="2">
           <nz-avatar
             nzSize="large"
             [nzText]="sharedService.GetTrigram(project.Assignee)"
           ></nz-avatar>
         </div>
         <div
-          class="segmentTable orangeSegment"
+          class="segmentTable c-hover orangeSegment"
           nz-col
           nzSpan="4"
           *ngIf="project.Status == 'progress'"
@@ -30,7 +30,7 @@
           En cours
         </div>
         <div
-          class="segmentTable greenSegment"
+          class="segmentTable c-hover greenSegment"
           nz-col
           nzSpan="4"
           *ngIf="project.Status == 'done'"
@@ -38,7 +38,7 @@
           Fait
         </div>
         <div
-          class="segmentTable"
+          class="segmentTable c-hover"
           nz-col
           nzSpan="6"
           style="display: block; padding: 0 1rem"
@@ -50,8 +50,8 @@
             style="top: 50%; transform: translateY(-50%)"
           ></nz-progress>
         </div>
-        <div class="segmentTable" nz-col></div>
-        <div class="segmentTable" nz-col></div>
+        <div class="segmentTable c-hover" nz-col></div>
+        <div class="segmentTable c-hover" nz-col></div>
       </div>
     </div>
   </div>
