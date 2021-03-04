@@ -17,10 +17,14 @@ body {
 }
 
 nz-header {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
   margin-top: 10vh;
   margin-bottom: 3rem;
+}
+
+nz-content {
+  margin-left: 5%;
 }
 
 nz-sider {
@@ -59,7 +63,8 @@ nz-sider {
 }
 
 .firstSegment {
-  border-left: #4c94fc 0.2rem solid;
+  border-left: #4c94fc 0.5rem solid;
+  border-radius: 3px;
   padding-left: 1rem;
   justify-content: left !important;
 }
@@ -75,11 +80,17 @@ nz-sider {
 }
 
 .headerSegment {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 500;
   text-align: center;
 }
 
 .c-hover:hover {
   cursor: pointer;
+}
+
+.ant-avatar-lg-string,
+.ant-avatar-sm-string,
+.ant-avatar-string {
+  position: unset;
 }

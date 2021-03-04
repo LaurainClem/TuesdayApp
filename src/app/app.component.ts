@@ -8,7 +8,7 @@ import { SharedService } from './services/shared.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  me: UserModel = { Id: 1, FirstName: 'Clem', LastName: 'Laurain' };
+  me: UserModel = { id: 1, firstName: 'Clem', lastName: 'Laurain' };
 
   constructor(public readonly sharedService: SharedService) {}
 }

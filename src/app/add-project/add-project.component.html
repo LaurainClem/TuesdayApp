@@ -1,0 +1,45 @@
+<nz-header> Nouveau projet </nz-header>
+<nz-content>
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email"
+        >Nom</nz-form-label
+      >
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Un nom est requis">
+        <input nz-input formControlName="label" id="label" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="assignee" nzRequired
+        >Administrateur</nz-form-label
+      >
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        nzErrorTip="Please input your password!"
+      >
+        <nz-select [ngModel]="assignee" formControlName="assignee">
+          <nz-option
+            *ngFor="let user of users"
+            [nzValue]="user"
+            [nzLabel]="user.lastName + ' ' + user.firstName"
+          ></nz-option>
+          <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
+            <i nz-icon nzType="loading" class="loading-icon"></i> Chargement ...
+          </nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item class="btnSubmit">
+      <button
+        type="submit"
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzShape="round"
+      >
+        Créer
+      </button>
+    </nz-form-item>
+  </form>
+</nz-content>

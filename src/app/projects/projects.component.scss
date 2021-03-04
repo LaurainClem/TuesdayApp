@@ -1,3 +1,20 @@
 .projectRow {
   margin-bottom: 0.2rem;
 }
+
+.projectList {
+  margin-top: 2rem;
+}
+
+a > i,
+div > i {
+  margin-right: 1.5rem;
+}
+
+a {
+  color: #3c3e42;
+}
+
+.trashIcon:hover {
+  color: red;
+}
