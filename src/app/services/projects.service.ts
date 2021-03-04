@@ -21,4 +21,27 @@ export class ProjectsService {
       assigneeId: project.assignee.id,
     });
   }
+
+  public FindOne(idProject: number): Observable<ProjectModel> {
+    return this.http.get<ProjectModel>(
+      `${environment.baseUrl}/projects/${idProject}`
+    );
+  }
+
+  public Update(project: ProjectModel): Observable<any> {
+    const projectUpdated = {
+      label: project.label,
+      assigneeId: project.assigneeId,
+    };
+    return this.http.patch(
+      `${environment.baseUrl}/projects/${project.id}`,
+      projectUpdated
+    );
+  }
+
+  public Delete(project: ProjectModel): Observable<ProjectModel[]> {
+    return this.http.delete<ProjectModel[]>(
+      `${environment.baseUrl}/projects/${project.id}`
+    );
+  }
 }

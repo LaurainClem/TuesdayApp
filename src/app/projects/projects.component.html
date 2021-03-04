@@ -70,16 +70,19 @@
           </div>
           <div class="segmentTable c-hover" nz-col nzSpan="2">
             <i nz-icon nzType="clock-circle" nzTheme="outline"></i>
-            {{ GetDelay(project.plannedEndDate, project.realEndDate) }} Jours
+            {{ GetDelay(project.realEndDate) }}
+            Jours
           </div>
           <div class="segmentTable c-hover" nz-col nzSpan="5">
-            <a nz-tooltip="Editer"
+            <a
+              nz-tooltip="Editer"
+              (click)="router.navigate(['projects', project.id, 'edit'])"
               ><i nz-icon nzType="edit" nzTheme="outline"></i
             ></a>
             <a nz-tooltip="Exigences">
               <i nz-icon nzType="file-done" nzTheme="outline"></i>
             </a>
-            <a nz-tooltip="Supprimer">
+            <a nz-tooltip="Supprimer" (click)="Delete(project)">
               <i
                 class="trashIcon"
                 nz-icon

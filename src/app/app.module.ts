@@ -22,11 +22,12 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 registerLocaleData(fr);
 
 @NgModule({
-  declarations: [AppComponent, ProjectsComponent, AddProjectComponent],
+  declarations: [AppComponent, ProjectsComponent, AddProjectComponent, EditProjectComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
