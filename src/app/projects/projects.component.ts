@@ -45,7 +45,6 @@ export class ProjectsComponent implements OnInit {
           project.realStartDate = this.GetDate(project.realStartDate);
           project.plannedEndDate = this.GetDate(project.plannedEndDate);
           project.plannedStartDate = this.GetDate(project.plannedStartDate);
-          console.log(project);
         },
         () => {
           this.sharedService.ShowErrorNotification();
@@ -59,12 +58,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   public GetDelay(plannedEndDate: Date) {
-    console.log(
-      typeof new Date(plannedEndDate).toString(),
-      typeof new Date('0001-01-01T00:00:00').toString(),
-      new Date(plannedEndDate).toString() ===
-        new Date('0001-01-01T00:00:00').toString()
-    );
     if (
       new Date(plannedEndDate).toString() !==
       new Date('0001-01-01T00:00:00').toString()

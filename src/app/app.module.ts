@@ -23,11 +23,25 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { ExigencesComponent } from './exigences/exigences.component';
+import { AddExigencesComponent } from './add-exigences/add-exigences.component';
+import { EditExigencesComponent } from './edit-exigences/edit-exigences.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 registerLocaleData(fr);
 
 @NgModule({
-  declarations: [AppComponent, ProjectsComponent, AddProjectComponent, EditProjectComponent],
+  declarations: [
+    AppComponent,
+    ProjectsComponent,
+    AddProjectComponent,
+    EditProjectComponent,
+    ExigencesComponent,
+    AddExigencesComponent,
+    EditExigencesComponent,
+    TasksComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -46,6 +60,7 @@ registerLocaleData(fr);
     FormsModule,
     NzSelectModule,
     NzToolTipModule,
+    NzTagModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-<nz-header> Editer projet </nz-header>
+<nz-header> Editer exigence </nz-header>
 <nz-content>
   <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
     <nz-form-item>
@@ -10,28 +10,24 @@
           nz-input
           formControlName="label"
           id="label"
-          [value]="project?.label"
+          [ngModel]="exigence?.label"
         />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="assignee" nzRequired
-        >Administrateur</nz-form-label
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="exigenceType" nzRequired
+        >Type</nz-form-label
       >
-      <nz-form-control
-        [nzSm]="14"
-        [nzXs]="24"
-        nzErrorTip="Please select administrator"
-      >
-        <nz-select [ngModel]="assignee" formControlName="assignee">
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Un type est requis">
+        <nz-select
+          formControlName="exigenceType"
+          [ngModel]="GetExigence(exigence?.exigenceType)"
+        >
           <nz-option
-            *ngFor="let user of users"
-            [nzValue]="user"
-            [nzLabel]="user.lastName + ' ' + user.firstName"
+            *ngFor="let exigenceType of GetExigences()"
+            [nzValue]="exigenceType"
+            [nzLabel]="exigenceType"
           ></nz-option>
-          <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
-            <i nz-icon nzType="loading" class="loading-icon"></i> Chargement ...
-          </nz-option>
         </nz-select>
       </nz-form-control>
     </nz-form-item>

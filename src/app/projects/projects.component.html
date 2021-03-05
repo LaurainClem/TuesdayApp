@@ -27,6 +27,7 @@
         nzSpan="24"
         *ngFor="let project of projects"
         class="projectRow"
+        (click)="router.navigate(['projects', project.id])"
       >
         <div nz-row>
           <div class="segmentTable c-hover firstSegment" nz-col nzSpan="6">
@@ -65,6 +66,7 @@
               [nzPercent]="project.percent"
               [nzShowInfo]="false"
               [nzStrokeWidth]="20"
+              [nzStrokeColor]="'#A25DDC'"
               style="top: 30%; position: relative"
             ></nz-progress>
           </div>
@@ -79,7 +81,10 @@
               (click)="router.navigate(['projects', project.id, 'edit'])"
               ><i nz-icon nzType="edit" nzTheme="outline"></i
             ></a>
-            <a nz-tooltip="Exigences">
+            <a
+              nz-tooltip="Exigences"
+              (click)="router.navigate(['projects', project.id, 'exigences'])"
+            >
               <i nz-icon nzType="file-done" nzTheme="outline"></i>
             </a>
             <a nz-tooltip="Supprimer" (click)="Delete(project)">

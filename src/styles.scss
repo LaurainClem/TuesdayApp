@@ -12,6 +12,22 @@ body {
   padding: 0 50px;
 }
 
+.projectList {
+  margin-top: 2rem;
+}
+a > i,
+div > i {
+  margin-right: 1.5rem;
+}
+
+a {
+  color: #3c3e42;
+}
+
+.trashIcon:hover {
+  color: red;
+}
+
 .ant-layout {
   background: #ffffff;
 }
@@ -93,4 +109,18 @@ nz-sider {
 .ant-avatar-sm-string,
 .ant-avatar-string {
   position: unset;
+}
+
+nz-select {
+  margin: 0 8px 10px 0;
+  width: 280px !important;
+}
+
+.btnSubmit {
+  display: flex;
+  justify-content: center;
+}
+
+.projectRow {
+  margin-bottom: 0.2rem;
 }
