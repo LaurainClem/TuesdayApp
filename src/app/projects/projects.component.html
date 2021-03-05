@@ -27,10 +27,14 @@
         nzSpan="24"
         *ngFor="let project of projects"
         class="projectRow"
-        (click)="router.navigate(['projects', project.id])"
       >
         <div nz-row>
-          <div class="segmentTable c-hover firstSegment" nz-col nzSpan="6">
+          <div
+            class="segmentTable c-hover firstSegment"
+            nz-col
+            nzSpan="6"
+            (click)="router.navigate(['projects', project.id])"
+          >
             {{ project.label }}
           </div>
           <div class="segmentTable c-hover" nz-col nzSpan="2">

@@ -15,4 +15,19 @@ export class TasksService {
       `${environment.baseUrl}/projects/${idProject}/jalons/${idJalon}/tasks`
     );
   }
+
+  /* public Update(task: TaskModel, idProject: number) {
+    const taskUpdated = {}
+    this.http.patch(`${environment.baseUrl}/projects/${idProject}/jalons/${task.jalonId}/tasks/${task.id}`, )
+  } */
+
+  public Delete(
+    idTask: number,
+    idJalon: number,
+    idProject: number
+  ): Observable<TaskModel[]> {
+    return this.http.delete<TaskModel[]>(
+      `${environment.baseUrl}/projects/${idProject}/jalons/${idJalon}/tasks/${idTask}`
+    );
+  }
 }

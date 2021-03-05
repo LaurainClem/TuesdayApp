@@ -15,4 +15,5 @@ export class TaskModel {
   requiredTask: TaskModel;
   assignee: UserModel;
   status: 'done' | 'progress' | 'waiting';
+  jalonId: number;
 }

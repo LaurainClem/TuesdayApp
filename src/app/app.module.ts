@@ -28,6 +28,7 @@ import { AddExigencesComponent } from './add-exigences/add-exigences.component';
 import { EditExigencesComponent } from './edit-exigences/edit-exigences.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 registerLocaleData(fr);
 
@@ -61,6 +62,7 @@ registerLocaleData(fr);
     NzSelectModule,
     NzToolTipModule,
     NzTagModule,
+    NzModalModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent],

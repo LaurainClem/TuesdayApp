@@ -27,6 +27,7 @@
           nzSpan="24"
           *ngFor="let task of jalon.tasks"
           class="projectRow"
+          (click)="showModal(task)"
         >
           <div nz-row>
             <div nz-col nzSpan="6" class="segmentTable firstSegment c-hover">
@@ -38,7 +39,11 @@
               ></nz-avatar>
             </div>
             <div nz-col nzSpan="6" class="segmentTable c-hover">
-              <nz-tag [nzColor]="'#f50'">todo</nz-tag>
+              <nz-tag
+                [nzColor]="'#f50'"
+                *ngFor="let exigence of task.exigences"
+                >{{ exigence }}</nz-tag
+              >
               <nz-tag [nzColor]="'#2db7f5'">todo</nz-tag>
             </div>
             <div
@@ -65,9 +70,92 @@
             >
               A faire
             </div>
+            <div
+              nz-col
+              nzSpan="2"
+              style="display: flex; justify-content: end; align-items: center"
+            >
+              <i nz-icon nzType="clock-circle" nzTheme="outline"></i>
+              {{ GetDelay(task.realEndDate) }}
+              Jours
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </nz-content>
+
+<nz-modal
+  nzCentered
+  [(nzVisible)]="isModalVisible"
+  [nzTitle]="selectedTask?.label"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  nzWidth="50vw"
+  style="height: 50vh"
+  [nzFooter]="null"
+>
+  <ng-container *nzModalContent>
+    <div nz-row>
+      <div nz-col nzSpan="16" style="padding: 0 2rem">
+        {{ selectedTask.description }}
+      </div>
+      <div
+        nz-col
+        nzSpan="8"
+        style="border-left: 2px silver solid; padding-left: 1rem"
+      >
+        <div nz-row>
+          <div
+            nz-col
+            nzSpan="24"
+            style="display: flex; justify-content: center; margin-bottom: 1rem"
+          >
+            <nz-select
+              [ngModel]="selectedTask?.status"
+              style="width: 200px !important"
+            >
+              <nz-option nzValue="done" nzLabel="Fini"></nz-option>
+              <nz-option nzValue="progress" nzLabel="En cours"></nz-option>
+              <nz-option nzValue="waiting" nzLabel="En attente"></nz-option>
+            </nz-select>
+          </div>
+          <div
+            nz-col
+            nzSpan="24"
+            style="display: flex; justify-content: center; margin-bottom: 1rem"
+          >
+            <i nz-icon nzType="clock-circle" nzTheme="outline"></i>
+            {{ GetDelay(selectedTask.realEndDate) }}
+            Jours
+          </div>
+          <div
+            nz-col
+            nzSpan="24"
+            style="display: flex; justify-content: center; margin-bottom: 1rem"
+          >
+            <nz-tag [nzColor]="'#2db7f5'">todo</nz-tag
+            ><nz-tag [nzColor]="'#2db7f5'">todo</nz-tag>
+          </div>
+          <div
+            nz-col
+            nzSpan="24"
+            style="display: flex; justify-content: center; margin-bottom: 1rem"
+          >
+            <button
+              nzType="primary"
+              nzShape="round"
+              nzSize="large"
+              nz-button
+              nzDanger
+              (click)="Delete()"
+            >
+              Supprimer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</nz-modal>
